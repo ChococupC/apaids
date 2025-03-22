@@ -333,11 +333,6 @@ header p {
   cursor: pointer;
 }
 
-.game_box:hover {
-  background-color: #b9b9b9;
-  color: #ffffff;
-}
-
 .game_box:active {
   transform: scale(0.97);
 }
