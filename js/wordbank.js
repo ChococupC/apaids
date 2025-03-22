@@ -1,0 +1,278 @@
+var categories, words, puzzle_words;
+
+var word_bank = [
+  {
+    categories: [
+      "Evolutionary Perspective",
+      "Cognitive Perspective",
+      "Meta-Analysis",
+      "Characteristics of Naturalistic Observation",
+    ],
+    words: [
+      [7, 4, 16, 14],
+      [10, 11, 13, 15],
+      [5, 8, 6, 12],
+      [3, 2, 1, 9],
+    ],
+    puzzle_words: [
+      "Natural",
+      "Affordable",
+      "Unobtrusive",
+      "Darwinism",
+      "Analytical",
+      "Summarize Study",
+      "Natural Selection",
+      "Combine Research",
+      "Ethical Risk",
+      "Thinking",
+      "Recall",
+      "Quantitative",
+      "Recognition",
+      "Survival",
+      "Intelligence",
+      "Mating Preference",
+    ],
+  },
+  {
+    categories: [
+      "Psychoanalytic Perspective",
+      "Social-Cultural Perspective",
+      "Defense Mechanisms",
+      "Characteristics of Case Study",
+    ],
+    words: [
+      [1, 2, 11, 3],
+      [16, 15, 9, 8],
+      [4, 13, 14, 6],
+      [10, 5, 7, 12],
+    ],
+    puzzle_words: [
+      "Unconscious",
+      "Dream",
+      "Motives",
+      "Rationalization",
+      "Specific",
+      "Reaction Formation",
+      "Detailed",
+      "Schema",
+      "Gender-role",
+      "Prolonged",
+      "Free-association",
+      "In-Depth",
+      "Sublimation",
+      "Regression",
+      "Culture",
+      "Society",
+    ],
+  },
+  {
+    categories: [
+      "Behavioral Perspective",
+      "Humanistic Perspective",
+      "Procedures an Experiment Contains",
+      "Biological Structure in Emotion Processing",
+    ],
+    words: [
+      [1, 13, 5, 12],
+      [14, 11, 4, 6],
+      [2, 3, 9, 10],
+      [7, 15, 8, 16],
+    ],
+    puzzle_words: [
+      "Reward & Punishment",
+      "Assignment",
+      "Placebo",
+      "Inner Growth",
+      "B.F. Skinner",
+      "Self-Actualized",
+      "Limbic System",
+      "Cerebral Cortex",
+      "Sample",
+      "Hypothesis",
+      "Free-Will",
+      "Classical Conditioning",
+      "Physical Learning",
+      "Potential",
+      "Reticular Formation",
+      "Automatic Nervous System",
+    ],
+  },
+  {
+    categories: [
+      "School of Psychology",
+      "Theories of Motivation",
+      "Sensation Seeking Theories",
+      "Anxiety Disorders",
+    ],
+    words: [
+      [11, 14, 15, 4],
+      [8, 6, 9, 7],
+      [12, 3, 2, 5],
+      [16, 1, 13, 10],
+    ],
+    puzzle_words: [
+      "Panic Attack",
+      "Disinhibition Theory",
+      "Thrill & Adventure Seeking Theory",
+      "Behaviorism",
+      "Boredom Susceptibility Theory",
+      "Optimum Arousal Theory",
+      "Cognitive Dissonance Theory",
+      "Evolutionary Theory",
+      "Drive Reduction Theory",
+      "Phobia",
+      "Structuralism",
+      "Experience Seeking Theory",
+      "PTSD",
+      "Functionalism",
+      "Gestalt",
+      "GAD",
+    ],
+  },
+  {
+    categories: [
+      "Motivational Conflict",
+      "Ways to judge ethicality",
+      "Ways to overcome bias",
+      "_______ Motivation",
+    ],
+    words: [
+      [5, 4, 1, 7],
+      [15, 3, 14, 8],
+      [16, 9, 2, 6],
+      [12, 13, 10, 11],
+    ],
+    puzzle_words: [
+      "Approach-Avoidance",
+      "Operational Definition",
+      "Debrief",
+      "Avoidance-Avoidance",
+      "Approach-Approach",
+      "Statistical Reasoning",
+      "Multiple Approach Avoidance",
+      "Confidentiality",
+      "Critical Thinking",
+      "Intrinsic",
+      "Extrinsic",
+      "High Achievement",
+      "Low Achievement",
+      "Harm Protection",
+      "Informed Consent",
+      "Scientific Attitude",
+    ],
+  },
+  {
+    categories: [
+      "______ Variable",
+      "Key Characteristics of Anxiety",
+      "Izard's 10 Basic Emotions",
+      "Type of Stressors",
+    ],
+    words: [
+      [4, 6, 7, 12],
+      [1, 8, 10, 14],
+      [15, 13, 3, 16],
+      [9, 11, 2, 5],
+    ],
+    puzzle_words: [
+      "Fear",
+      "Chronic Stressors",
+      "Anger",
+      "Independent",
+      "Catastrophic Events",
+      "Dependent",
+      "Controlled",
+      "Tension",
+      "Daily Hassles",
+      "Irritable",
+      "Life Changes/Strains",
+      "Confound",
+      "Sadness",
+      "Uncontrollable",
+      "Joy",
+      "Guilt",
+    ],
+  },
+  {
+    categories: [
+      "Famous Animals being Experimented",
+      "Statistics",
+      "Describing a Correlation",
+      "OCD Related Disorders",
+    ],
+    words: [
+      [9, 6, 15, 16],
+      [3, 12, 11, 4],
+      [14, 1, 2, 8],
+      [7, 5, 10, 13],
+    ],
+    puzzle_words: [
+      "Coefficient",
+      "Strength",
+      "Mean",
+      "Null Hypothesis",
+      "Hoarding Disorder",
+      "HarLow's Monkeys",
+      "Body Dysmorphic Disorder",
+      "Context",
+      "Pavlov's Dogs",
+      "Trichotillomania",
+      "Normal Distribution",
+      "Standard Deviation",
+      "Excoriation Disorder",
+      "Direction",
+      "Skinner's Mice",
+      "Skinner's Pigeons",
+    ],
+  },
+  {
+    categories: [
+      "Ideas of Unconsciousness",
+      "Things that Alter an Experiment",
+      "Psychosexual Stages",
+      "Sexual Response Phases",
+    ],
+    words: [
+      [3, 13, 16, 11],
+      [14, 5, 1, 4],
+      [8, 12, 7, 2],
+      [6, 10, 15, 9],
+    ],
+    puzzle_words: [
+      "Psuedosicence",
+      "Genital",
+      "Dreams",
+      "Confirmation Bias",
+      "Overconfidence",
+      "Excitement",
+      "Phallic",
+      "Oral",
+      "Resolution",
+      "Plateau",
+      "Rorschach inkblot Test",
+      "Anal",
+      "Unacceptable Thoughts",
+      "Hindsight Bias",
+      "Orgasm",
+      "Unaware Motive",
+    ],
+  },
+];
+
+function categoryUpdate() {
+  var originalDate = new Date("2025-03-20");
+  var currentDate = new Date();
+  var timeDifference = currentDate - originalDate;
+  var daysDifference =
+    Math.floor(timeDifference / (1000 * 3600 * 24)) % word_bank.length;
+  wordBank(daysDifference);
+}
+
+function wordBank(daysDifference) {
+  today_group = word_bank[daysDifference];
+  categories = today_group.categories;
+  words = today_group.words;
+  puzzle_words = today_group.puzzle_words;
+}
+
+categoryUpdate();
