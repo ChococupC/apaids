@@ -206,6 +206,10 @@ function CheckWin() {
       if ($(".category").length == 3) {
         Confetti();
         CreateCategory(selectedBoxes, i);
+        setCookieMidnight(
+          "category_apaids",
+          JSON.stringify([cookie_tries, ...cookie_categories])
+        );
         $(".message").text("Great Job!").addClass("animate_message");
         setTimeout(function () {
           $(".start_button").text("Reseult");
