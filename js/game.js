@@ -79,7 +79,7 @@ function readCookie() {
             game_boxes = $.merge(game_boxes, $(`#box${id}`));
           });
 
-          CreateCategory(game_boxes, i);
+          CreateCategoryFast(game_boxes, i);
         }
       }
       $(".start_button").text("Reseult");
@@ -101,7 +101,7 @@ function readCookie() {
         words[category_id].forEach((id) => {
           game_boxes = $.merge(game_boxes, $(`#box${id}`));
         });
-        CreateCategory(game_boxes, category_id);
+        CreateCategoryFast(game_boxes, category_id);
         cookie_categories.push(i);
       }
     }
@@ -121,9 +121,22 @@ function checkSelectedBoxes() {
     $("#Submit").prop("disabled", true);
   }
 }
-
 window.addEventListener("resize", () => {
-  location.reload(); // Refreshes the page when the viewport changes size
+  const opened = $(".startingwrapper").hasClass("animate_start");
+
+  localStorage.setItem("opened", opened);
+
+  location.reload();
+});
+
+window.addEventListener("load", () => {
+  const wasOpened = localStorage.getItem("opened") === "true";
+
+  if (wasOpened) {
+    $(".startingwrapper").css("display", "none");
+    $(".startingwrapper").addClass("animate_start");
+    localStorage.removeItem("opened");
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -269,6 +282,19 @@ function CreateCategory(game_boxes, position) {
   }, 900);
 }
 
+function CreateCategoryFast(game_boxes, position) {
+  var new_category = MoveBoxes(game_boxes, position);
+  var Texts = $(game_boxes)
+    .map(function () {
+      return $(this).text().trim();
+    })
+    .get();
+  RemoveBoxes(game_boxes);
+  new_category
+    .removeClass("animate_fade")
+    .append(`<h3>${categories[position]}</h3><p>${Texts.join(", ")}</p>`);
+}
+
 function RemoveBoxes(game_boxes) {
   game_boxes.each(function () {
     $(this).remove();
@@ -357,3 +383,4 @@ function Confetti() {
     return colors[Math.floor(Math.random() * colors.length)];
   }
 }
+
