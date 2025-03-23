@@ -21,7 +21,12 @@ function addWords() {
 
 function resizeWords() {
   var game_boxes = $(".game_box");
-  var containerWidth = game_boxes[0].offsetWidth;
+  var containerWidth = window.matchMedia(
+    "only screen and (max-width: 64em) and (orientation: landscape)"
+  ).matches
+    ? game_boxes[0].offsetHeight
+    : game_boxes[0].offsetWidth;
+  console.log(containerWidth);
   var font_size = parseFloat(window.getComputedStyle(game_boxes[0]).fontSize);
 
   game_boxes.each(function () {
@@ -49,7 +54,11 @@ function resizeWords() {
       var newFontSize = Math.round(font_size * text_ratio);
       $(this).css("font-size", `${newFontSize}px`);
     } else {
-      var textWidth = this.scrollWidth;
+      var textWidth = window.matchMedia(
+        "only screen and (max-width: 64em) and (orientation: landscape)"
+      ).matches
+        ? this.scrollHeight
+        : this.scrollWidth;
 
       if (textWidth > containerWidth) {
         var newFontSize = Math.round(
@@ -61,7 +70,14 @@ function resizeWords() {
   });
 
   var main = $("main");
-  var main_width = $(".main_game_wrapper")[0].offsetWidth + 6;
+  var mainGameWrapper = $(".main_game_wrapper")[0];
+
+  var main_width = window.matchMedia(
+    "only screen and (max-width: 64em) and (orientation: landscape)"
+  ).matches
+    ? mainGameWrapper.offsetHeight + 6
+    : mainGameWrapper.offsetWidth + 6;
+
   main.css("width", `${main_width}px`);
 }
 
@@ -121,23 +137,6 @@ function checkSelectedBoxes() {
     $("#Submit").prop("disabled", true);
   }
 }
-window.addEventListener("resize", () => {
-  const opened = $(".startingwrapper").hasClass("animate_start");
-
-  localStorage.setItem("opened", opened);
-
-  location.reload();
-});
-
-window.addEventListener("load", () => {
-  const wasOpened = localStorage.getItem("opened") === "true";
-
-  if (wasOpened) {
-    $(".startingwrapper").css("display", "none");
-    $(".startingwrapper").addClass("animate_start");
-    localStorage.removeItem("opened");
-  }
-});
 
 document.addEventListener("DOMContentLoaded", function () {
   var game_boxes = $(".game_box");
