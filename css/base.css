@@ -43,6 +43,26 @@ main {
   min-height: 375px;
 }
 
+#rotate-device-warning {
+  display: none;
+}
+
+@media only screen and (max-width: 64em) and (orientation: landscape) {
+  #rotate-device-warning {
+    display: flex;
+    position: absolute;
+    background-color: #212121;
+    height: 100%;
+    z-index: 3141592;
+    width: 100%;
+    align-items: center;
+  }
+
+  #rotate-device-warning img {
+    width: 100%;
+  }
+}
+
 /* start & end */
 .startingwrapper {
   display: flex;
