@@ -61,6 +61,9 @@ main {
   #rotate-device-warning img {
     width: 100%;
   }
+
+  body {
+    overflow: hidden;
 }
 
 /* start & end */
