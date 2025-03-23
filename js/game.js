@@ -122,6 +122,10 @@ function checkSelectedBoxes() {
   }
 }
 
+window.addEventListener("resize", () => {
+  location.reload(); // Refreshes the page when the viewport changes size
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   var game_boxes = $(".game_box");
   var maxSelected = 4;
