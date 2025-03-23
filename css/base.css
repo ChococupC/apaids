@@ -353,11 +353,6 @@ header p {
   cursor: pointer;
 }
 
-.game_box:hover {
-  background-color: #b9b9b9;
-  color: #ffffff;
-}
-
 .game_box:active {
   transform: scale(0.97);
 }
@@ -499,11 +494,6 @@ header p {
   right: 0;
   top: 0;
   z-index: -1;
-}
-
-.game_button:hover:not(:disabled) {
-  filter: brightness(0.9);
-  -webkit-filter: brightness(0.9);
 }
 
 .game_button:active {
