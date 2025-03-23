@@ -50,7 +50,7 @@ main {
 @media only screen and (max-width: 64em) and (orientation: landscape) {
   #rotate-device-warning {
     display: flex;
-    position: absolute;
+    position: fixed;
     background-color: #212121;
     height: 100%;
     z-index: 3141592;
