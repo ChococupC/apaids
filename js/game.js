@@ -11,7 +11,6 @@ function startup() {
   resizeWords();
   readCookie();
   checkSelectedBoxes();
-  Start();
 }
 
 function addWords() {
