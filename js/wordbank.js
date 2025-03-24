@@ -79,7 +79,7 @@ var word_bank = [
       [7, 15, 8, 16],
     ],
     puzzle_words: [
-      "Reward & Punishment",
+      "Operant Conditioning",
       "Assignment",
       "Placebo",
       "Inner Growth",
