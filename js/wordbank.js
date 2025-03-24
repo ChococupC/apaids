@@ -132,8 +132,8 @@ var word_bank = [
   {
     categories: [
       "Motivational Conflict",
-      "Ways to judge ethicality",
-      "Ways to overcome bias",
+      "Ways to Judge Ethicality",
+      "Ways to Overcome Bias",
       "_______ Motivation",
     ],
     words: [
