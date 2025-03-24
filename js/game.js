@@ -57,7 +57,7 @@ function resizeWords() {
       var textWidth = window.matchMedia(
         "only screen and (max-width: 64em) and (orientation: landscape)"
       ).matches
-        ? this.scrollHeight + 6
+        ? this.scrollHeight - 5
         : this.scrollWidth;
 
       if (textWidth > containerWidth) {
