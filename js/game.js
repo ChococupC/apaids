@@ -24,7 +24,7 @@ function resizeWords() {
   var containerWidth = window.matchMedia(
     "only screen and (max-width: 64em) and (orientation: landscape)"
   ).matches
-    ? game_boxes[0].offsetHeight
+    ? game_boxes[0].offsetHeight + 6;
     : game_boxes[0].offsetWidth;
   console.log(containerWidth);
   var font_size = parseFloat(window.getComputedStyle(game_boxes[0]).fontSize);
