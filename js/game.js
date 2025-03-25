@@ -24,7 +24,7 @@ function resizeWords() {
   var containerWidth = window.matchMedia(
     "only screen and (max-width: 64em) and (orientation: landscape)"
   ).matches
-    ? game_boxes[0].offsetHeight + 5
+    ? game_boxes[0].offsetHeight + 8
     : game_boxes[0].offsetWidth;
   console.log(containerWidth);
   var font_size = parseFloat(window.getComputedStyle(game_boxes[0]).fontSize);
@@ -54,7 +54,7 @@ function resizeWords() {
       var newFontSize = Math.round(font_size * text_ratio);
       $(this).css("font-size", `${newFontSize}px`);
     } else {
-      var textWidth = text.length * font_size * 0.8;
+      textWidth = text.length * font_size * 0.79;
       console.log(text, textWidth, containerWidth);
       if (textWidth > containerWidth) {
         var newFontSize = Math.round(font_size * (containerWidth / textWidth));
