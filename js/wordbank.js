@@ -175,7 +175,7 @@ var word_bank = [
       [9, 11, 2, 5],
     ],
     puzzle_words: [
-      "Cerebellum",
+      "Sadness",
       "Chronic Stressors",
       "Amygdala",
       "Independent",
@@ -187,7 +187,7 @@ var word_bank = [
       "Irritable",
       "Life Changes/ Strains",
       "Confound",
-      "Sadness",
+      "Cerebellum",
       "Uncontrollable",
       "Hippocampus",
       "Thalamus",
