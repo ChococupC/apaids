@@ -57,7 +57,7 @@ function resizeWords() {
       var textWidth = text.length * font_size * 0.8;
       console.log(text, textWidth, containerWidth);
       if (textWidth > containerWidth) {
-        var newFontSize = Math.floor(font_size * (containerWidth / textWidth));
+        var newFontSize = Math.round(font_size * (containerWidth / textWidth));
         $(this).css("font-size", `${newFontSize}px`);
       }
     }
