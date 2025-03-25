@@ -54,11 +54,7 @@ function resizeWords() {
       var newFontSize = Math.round(font_size * text_ratio);
       $(this).css("font-size", `${newFontSize}px`);
     } else {
-      var textWidth = window.matchMedia(
-        "only screen and (max-width: 64em) and (orientation: landscape)"
-      ).matches
-        ? this.scrollHeight + 20
-        : this.scrollWidth;
+      var textWidth = text.length * font_size * 0.5;
 
       if (textWidth > containerWidth) {
         var newFontSize = Math.round(
