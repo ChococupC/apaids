@@ -22,10 +22,10 @@ function addWords() {
 function resizeWords() {
   var game_boxes = $(".game_box");
   var containerWidth = window.matchMedia(
-  "only screen and (max-width: 64em) and (orientation: landscape)"
-).matches
-  ? game_boxes[0].offsetHeight * 1.06
-  : game_boxes[0].offsetWidth;
+    "only screen and (max-width: 64em) and (orientation: landscape)"
+  ).matches
+    ? game_boxes[0].offsetHeight
+    : game_boxes[0].offsetWidth;
   console.log(containerWidth);
   var font_size = parseFloat(window.getComputedStyle(game_boxes[0]).fontSize);
 
@@ -54,12 +54,10 @@ function resizeWords() {
       var newFontSize = Math.round(font_size * text_ratio);
       $(this).css("font-size", `${newFontSize}px`);
     } else {
-      var textWidth = text.length * font_size * 0.5;
-
+      var textWidth = text.length * font_size * 0.8;
+      console.log(text, textWidth, containerWidth);
       if (textWidth > containerWidth) {
-        var newFontSize = Math.round(
-          font_size * (containerWidth / textWidth) * 0.75
-        );
+        var newFontSize = Math.floor(font_size * (containerWidth / textWidth));
         $(this).css("font-size", `${newFontSize}px`);
       }
     }
@@ -73,7 +71,6 @@ function resizeWords() {
   ).matches
     ? mainGameWrapper.offsetHeight + 6
     : mainGameWrapper.offsetWidth + 6;
-
   main.css("width", `${main_width}px`);
 }
 
