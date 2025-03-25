@@ -185,7 +185,7 @@ var word_bank = [
       "Tension",
       "Daily Hassles",
       "Irritable",
-      "Life Changes/Strains",
+      "Life Changes/ Strains",
       "Confound",
       "Sadness",
       "Uncontrollable",
