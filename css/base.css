@@ -295,7 +295,6 @@ header p {
   0% {
     background-color: #ffffff;
     display: grid;
-    gap: 5px;
     opacity: 1;
   }
   60% {
@@ -303,7 +302,6 @@ header p {
   }
   100% {
     display: grid;
-    gap: 5px;
     opacity: 0;
   }
 }
