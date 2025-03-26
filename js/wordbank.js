@@ -179,7 +179,7 @@ var word_bank = [
       "Chronic Stressors",
       "Amygdala",
       "Physical Arousal",
-      "Catastrophic Events",
+      "Adverse Childhood Experiences",
       "Inhibits digestion",
       "Releases Epinephrine / Norepinephrine",
       "Tension",
