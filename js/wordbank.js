@@ -3,6 +3,38 @@ var categories, words, puzzle_words;
 var word_bank = [
   {
     categories: [
+      'Parasympathetic Nervous System', 
+      'Characteristics and Drugs of Depressants', 
+      'Hindbrain Sections', 
+      'Reflex Formation'
+    ],
+    words: [
+      [6, 14, 2, 8], 
+      [15, 5, 7, 11], 
+      [9, 12, 1, 4], 
+      [3, 10, 16, 13]
+    ],
+    puzzle_words: [
+      'Pons', 
+      'Constricts Pupil',
+      'Sensory Neuron',
+      'Cerebellum',
+      'Slow CNS',
+      'Rest and Digest',
+      'Drowsiness',
+      'Stimulates Salivation',
+      'RAS', 
+      'Interneurone',
+      'Lower Inhibition',
+      'Medulla',
+      'Muscle',
+      'Lower Heart Rate',
+      'Alcohol'
+      'Motor Neuron'
+    ],
+  },
+  {
+    categories: [
       "Evolutionary Perspective",
       "Cognitive Perspective",
       "Meta-Analysis",
@@ -292,7 +324,7 @@ var word_bank = [
 ];
 
 function categoryUpdate() {
-  var originalDate = new Date("2025-03-20 00:00:00");
+  var originalDate = new Date("2025-04-15 00:00:00");
   var currentDate = new Date();
   var timeDifference = currentDate - originalDate;
   var daysDifference =
