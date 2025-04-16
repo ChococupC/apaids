@@ -24,6 +24,5 @@ function setCookieMidnight(name, value) {
   tomorrow.setDate(tomorrow.getDate() + 1);
   tomorrow.setHours(0, 0, 0, 0);
 
-  console.log(name, value, tomorrow);
   setCookie(name, value, tomorrow);
 }
