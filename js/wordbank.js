@@ -324,7 +324,7 @@ var word_bank = [
 ];
 
 function categoryUpdate() {
-  var originalDate = new Date("2025-04-15 00:00:00");
+  var originalDate = new Date("2025-04-14 00:00:00");
   var currentDate = new Date();
   var timeDifference = currentDate - originalDate;
   var daysDifference =
