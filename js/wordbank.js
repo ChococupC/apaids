@@ -29,7 +29,7 @@ var word_bank = [
       'Medulla',
       'Muscle',
       'Lower Heart Rate',
-      'Alcohol'
+      'Alcohol',
       'Motor Neuron'
     ],
   },
