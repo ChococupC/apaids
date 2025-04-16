@@ -26,7 +26,6 @@ function resizeWords() {
   ).matches
     ? game_boxes[0].offsetHeight + 8
     : game_boxes[0].offsetWidth;
-  console.log(containerWidth);
   var font_size = parseFloat(window.getComputedStyle(game_boxes[0]).fontSize);
 
   game_boxes.each(function () {
@@ -55,7 +54,6 @@ function resizeWords() {
       $(this).css("font-size", `${newFontSize}px`);
     } else {
       textWidth = text.length * font_size * 0.79;
-      console.log(text, textWidth, containerWidth);
       if (textWidth > containerWidth) {
         var newFontSize = Math.round(font_size * (containerWidth / textWidth));
         $(this).css("font-size", `${newFontSize}px`);
