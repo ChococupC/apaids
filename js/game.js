@@ -295,6 +295,9 @@ function MoveBoxes(game_boxes, position) {
   $(".game_category_wrapper").append(
     `<div class="category animate_fade" id="category${position}" style="height: ${game_boxes[0].offsetHeight}px"></div>`
   );
+  for (let i = 0; i < selected_boxes.length; i++) {
+    new_category.append(selected_boxes[i]);
+  }
   var new_category = $(`#category${position}`);
   return new_category;
 }
